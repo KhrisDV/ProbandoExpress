@@ -1,6 +1,6 @@
 import express from "express";
 import {
-  getTaskController,
+  getAllTasksController,
   postTaskController,
   putTaskController,
   deleteTaskController,
@@ -14,7 +14,7 @@ const jsonParser = express.json();
 
 app.post(HOST + "/users/", jsonParser, postUserController);
 
-app.get(HOST + "/tasks/", getTaskController);
+app.get(HOST + "/tasks/", getAllTasksController);
 app.post(HOST + "/task/", jsonParser, authMiddleware, postTaskController);
 app.post(HOST + "/task/", jsonParser, authMiddleware, postTaskController);
 app.put(HOST + "/task/", jsonParser, authMiddleware, putTaskController);
